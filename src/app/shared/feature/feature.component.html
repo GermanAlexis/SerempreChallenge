@@ -1,6 +1,7 @@
 <button *ngIf="titleItem && showBorder" class="itemInfo container-item" [ngClass]="{'active' : active}">
     <div class="titleItem">
         <p >{{titleItem}}</p>
+        <span *ngIf="aditionalPrice">+ {{aditionalPrice  | currency:'USD':'symbol' }}</span>
     </div>
     <p class="item__description" *ngIf="descripItem">{{descripItem}}</p>
 </button>
