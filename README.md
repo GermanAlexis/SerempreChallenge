@@ -21,7 +21,7 @@ mi nombre German Alvarez Arrieta de la cuidad de monteria, me dedico a ser testi
    ```
 3. Enter your Browser in `localhost:4200`
    ```
-   http//:localhost:4200  |  http//:167.71.185.125
+   http://localhost:4200  |  http://167.71.185.125
    ```
 
 
