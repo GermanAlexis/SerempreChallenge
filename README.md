@@ -1,27 +1,31 @@
 # Serempre
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
+## Descripcion
+El reto fue muy interesante ya que me encontraba en un stanp by de programacion ya que no ejecuto codigo muy seguido, e igualmente con tecnicimos de css que no es muy fuerte, lo cual me hizo recurrir a busqueda de informacion sobre immpletacion de css o tecnicas
 
-## Development server
+algo tambien mucha relevancia fue la implementacion para la comunicacion entre componentes, utilizando los decoradores Input y Output con la complementacion de pipes, el map de la respuesta ya que venia un solo objecto lo cual me llevo una manera de trabajo mejor
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+mi nombre German Alvarez Arrieta de la cuidad de monteria, me dedico a ser testing y mi profesion es ingeniero de sistemas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Installation
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/GermanAlexis/SerempreChallenge.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Enter your Browser in `localhost:4200`
+   ```
+   http//:localhost:4200  |  http//:167.71.185.125
+   ```
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<!-- CONTACT -->
+## Contact
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+German Alexis Alvarez Arrieta - alexisdager93@hotmail.com
