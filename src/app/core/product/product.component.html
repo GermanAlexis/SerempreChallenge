@@ -1,0 +1,104 @@
+<!-- <app-loader></app-loader> -->
+
+<div style="margin-bottom: 200px;">
+    <!-- Seccion Header -->
+    <app-header></app-header>
+
+    <!-- Seccion main content -->
+    <div *ngIf="product" class="container main-content">
+        <div class="row">
+            <!-- Seccion carousel images -->
+            <div class="col-sm-12 col-md-12 col-xl-6 padding-right margin-76">
+                <div class="area-sticky">
+                    <div class="content-image">
+                        <img loading="lazy" class="product-image" [src]="imageSelected">
+                    </div>
+
+                    <div class="carrousel">
+                        <button *ngFor="let image of product.images; let i = index"
+                            [ngClass]="{'active': image.x1=== imageSelected}" class="content-image"
+                            (click)="eventSelectImage(image.x1)">
+                            <img loading="lazy" class="mini-image" [src]="image.x1">
+                        </button>
+                    </div>
+
+                    <div class="caracteristics col-sm-none">
+                        <div *ngFor="let caract of product.technical_details">
+                            <img [src]="caract.images.x1">
+                            <p>{{caract.name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Section where show prodcut information -->
+            <div class="col-sm-12 col-md-12 col-xl-6 padding-left">
+                <p class="badget-text text-pink">NEW RELEASE</p>
+                <h2 class="title-general ">{{product.title}}</h2>
+                <p class="subtitle-general ">{{product.description}}</p>
+                <p class="badget-text">STARTING AT</p>
+                <h2 class="title-general">{{product.price | currency:'USD':'symbol' }}</h2>
+                <!-- Seccion Tab contents -->
+                <div class="content-description">
+                    <div>
+                        <ul>
+                            <li *ngFor="let detail of product.details; let i = index" [ngClass]="{'active': currentTab === i}" class="tab-item" (click)="eventSelectTabs(i)">
+                                {{detail.name}}</li>
+                        </ul>
+                    </div>
+                </div> <!-- Seccion caracteritics of product -->
+                 <div class="caracteristics-app ">
+                    <div>
+                        <p>{{product.details[currentTab].description}}</p>
+                    </div>
+                 </div>
+
+                <section>
+                    <p class="title-description">Choose your finish.</p>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-xl-6 col-xxl-6">
+                            <app-colors *ngFor="let color of product.colors, let i = index" 
+                                [showBorder]="true" [titleItem]="color.name"
+                                [active]="typeProductSelected===i" (click)="eventTypeProduct(i)"
+                                [descripItem]="color.description">
+                            </app-colors>
+                        </div>
+                    </div>
+                </section> <!-- Section where show warrancy types -->
+                  <section>
+                    <p class="title-description">Would you like to add extended warranty coverage?.</p>
+                    <div class="row">
+                        <app-warranty *ngFor="let warrancy of product.warranty"
+                            [showBorder]="true"
+                            [titleItem]="warrancy.name"
+                            [active]="warrantySelected && warrantySelected.id===warrancy.id"
+                            (click)="eventWarrancy(warrancy)"
+                            [aditionalPrice]="warrancy.additionalValue"
+                            [descripItem]="warrancy.description"></app-warranty>
+                    </div>
+                </section> <!-- Section list features -->
+                <section>
+                    <p class="title-description">Features.</p>
+                    <div class="row">
+                        <app-feature *ngFor="let feats of product.features" 
+                            [showBorder]="true"
+                            [titleItem]="feats.name" [aditionalPrice]="feats.additionalValue"
+                            [active]="featureSelected && featureSelected.id===feats.id" (click)="eventFeature(feats)">
+                        </app-feature>
+                    </div>
+                </section> <!-- Section of specifications -->
+                <section>
+                    <p class="title-description">Specifications.</p>
+                    <ul class="specifications" *ngIf="product.specs">
+                            <li class="text-black" >{{ product.specs.dimension }}</li>
+                            <li class="text-black" >{{ product.specs.usb_standard }}</li>
+                            <li class="text-black" >{{ product.specs.power_suply }}</li>
+                            <li class="text-black" >{{ product.specs.frequency_response_microphone }}</li>
+                            <li class="text-black" >{{ product.specs.frequency_response }}</li>
+                            <li class="text-black" >{{ product.specs.noise_cancelation }}</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div> <!-- Seccion Footer -->
+    <app-footer [productPrice]="amountTotal"></app-footer>
+</div>

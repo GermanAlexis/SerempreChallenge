@@ -1,0 +1,30 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-none col-md-6 col-xl-6 footer__display-info">
+        <div class="row separador">
+          <div class="col-md-12 col-xl-6" *ngFor="let item of contentItemsFooter">
+            <app-warranty
+              [titleItem]="item.titleItem"
+              [descripItem]="item.description"
+            ></app-warranty>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-xl-6">
+        <div class="content-resumen separador footer__display-buy">
+          <div>
+            <p class="resumen-price">
+              {{ productPrice | currency: "USD":"symbol" }}
+            </p>
+            <a class="resumen-more-info" href="#"
+              >Need financing? Learn more
+            </a>
+          </div>
+          <button class="button-buy">Buy now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
