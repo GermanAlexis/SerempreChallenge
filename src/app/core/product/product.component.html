@@ -21,7 +21,6 @@
                             <img loading="lazy" class="mini-image" [src]="image.x1">
                         </button>
                     </div>
-
                     <div class="caracteristics col-sm-none">
                         <div *ngFor="let caract of product.technical_details">
                             <img [src]="caract.images.x1">
@@ -46,11 +45,7 @@
                         </ul>
                     </div>
                 </div> <!-- Seccion caracteritics of product -->
-                 <div class="caracteristics-app ">
-                    <div>
-                        <p>{{product.details[currentTab].description}}</p>
-                    </div>
-                 </div>
+                        <p>{{ product.details[currentTab].description }}</p>
 
                 <section>
                     <p class="title-description">Choose your finish.</p>
