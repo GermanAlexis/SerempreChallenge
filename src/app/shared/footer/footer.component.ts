@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
 
   @Input() productPrice = 0;
+   Date = new Date().getFullYear();
 
    contentItemsFooter = [
     {
